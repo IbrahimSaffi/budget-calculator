@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-data{
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 20px;
+  background-color: #f7ce8b;
+  height: 40%;
+}
+label{
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 10%;
+  margin-bottom: 10px;
+  min-width: 40%;
+}
+label p {
+  min-width: 25%;
+}
+.add-data button{
+ width: 100%;
+ color: #f2a43a;
+ height: 30px;
+ font-weight: bold;
+ cursor: pointer;
+}
+.add-data button:hover{
+  filter: brightness(80%);
+}
+input ,button,select{
+  border: none;
+  border: 2px solid #f4b356;
+  background-color: white;
+}
+select,input{
+width: 70%;
+}
+.expenses,.incomes{
+  height: 60%;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  overflow: auto;
+}
+.expenses{
+  background-color: #fcecee;
+  color: #d44b41;
+  padding: 20px;
+}
+.incomes{
+  background-color: #f2f8ea;
+  color: #67ad5b;
+  padding: 20px;
+}
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  color: black;
+  text-align: start;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.card::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 80%;
+  width: 3px;
 }
+.inc-card::after{
+  background-color: green;
+}
+.exp-card::after{
+  background-color: red;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.card:first-child{
+  text-transform: capitalize;
+}
+.card :nth-child(2){
+  font-weight: bolder;
 }
